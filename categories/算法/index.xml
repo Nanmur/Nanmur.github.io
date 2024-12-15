@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>算法 on NanmurSpace</title>
-        <link>http://localhost:1313/categories/%E7%AE%97%E6%B3%95/</link>
+        <link>https://Nanmur.github.io/categories/%E7%AE%97%E6%B3%95/</link>
         <description>Recent content in 算法 on NanmurSpace</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nanmur</copyright>
-        <lastBuildDate>Sat, 14 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 14 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://Nanmur.github.io/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Starcode算法基础班笔记</title>
-        <link>http://localhost:1313/p/test-chinese/</link>
+        <link>https://Nanmur.github.io/p/test-chinese/</link>
         <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/test-chinese/</guid>
-        <description>&lt;img src="http://localhost:1313/p/test-chinese/Starcode-logo.png" alt="Featured image of post Starcode算法基础班笔记" /&gt;&lt;h2 id=&#34;1前缀和差分&#34;&gt;1.前缀和差分
+        <guid>https://Nanmur.github.io/p/test-chinese/</guid>
+        <description>&lt;img src="https://Nanmur.github.io/p/test-chinese/Starcode-logo.png" alt="Featured image of post Starcode算法基础班笔记" /&gt;&lt;h2 id=&#34;1前缀和差分&#34;&gt;1.前缀和差分
 &lt;/h2&gt;&lt;h3 id=&#34;输入输出&#34;&gt;输入输出
 &lt;/h3&gt;&lt;h4 id=&#34;scanf-和-printf&#34;&gt;scanf 和 printf
 &lt;/h4&gt;&lt;p&gt;优点：格式化输入、输出  %.nlf可以保留n位输出浮点数（一般竞赛中只用double 因为float能做的double都能做）&lt;/p&gt;

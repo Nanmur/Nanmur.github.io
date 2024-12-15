@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>工具 on NanmurSpace</title>
-        <link>http://localhost:1313/categories/%E5%B7%A5%E5%85%B7/</link>
+        <link>https://Nanmur.github.io/categories/%E5%B7%A5%E5%85%B7/</link>
         <description>Recent content in 工具 on NanmurSpace</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nanmur</copyright>
-        <lastBuildDate>Sat, 14 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 14 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://Nanmur.github.io/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Git入门</title>
-        <link>http://localhost:1313/p/git/</link>
+        <link>https://Nanmur.github.io/p/git/</link>
         <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/git/</guid>
-        <description>&lt;img src="http://localhost:1313/p/git/Gitlogo.png" alt="Featured image of post Git入门" /&gt;&lt;h2 id=&#34;一创建版本库&#34;&gt;一、创建版本库
+        <guid>https://Nanmur.github.io/p/git/</guid>
+        <description>&lt;img src="https://Nanmur.github.io/p/git/Gitlogo.png" alt="Featured image of post Git入门" /&gt;&lt;h2 id=&#34;一创建版本库&#34;&gt;一、创建版本库
 &lt;/h2&gt;&lt;h3 id=&#34;1配置git环境&#34;&gt;1.配置git环境
 &lt;/h3&gt;&lt;p&gt;在git安装好以后，需要配置环境变量，命令行中输入以下命令：
-&lt;code&gt;git config --global user.name &amp;quot;Your Name&amp;quot; &lt;/code&gt;git config &amp;ndash;global user.email &amp;ldquo;&lt;a class=&#34;link&#34; href=&#34;mailto:email@example.com&#34; &gt;email@example.com&lt;/a&gt;&amp;rdquo;
+&lt;code&gt;git config --global user.name &amp;quot;Your Name&amp;quot; &lt;/code&gt;git config &amp;ndash;global user.email &amp;ldquo;&lt;a class=&#34;link&#34; href=&#34;mailto:email@example.com&#34; &gt;email@example.com&lt;/a&gt;&amp;rdquo;
 &lt;code&gt;git config --list&lt;/code&gt;：查看当前的git配置；&lt;/p&gt;
 &lt;p&gt;配置好环境后，使用&lt;code&gt;git init&lt;/code&gt;，即可将当前目录变成一个git可以管理的仓库；&lt;/p&gt;
 &lt;p&gt;git顺序：工作区 &amp;ndash;&amp;gt; add &amp;ndash;&amp;gt; 暂存区 &amp;ndash;&amp;gt; commit &amp;ndash;&amp;gt; 版本库 &amp;ndash;&amp;gt; push &amp;ndash;&amp;gt; 远程版本库。&lt;/p&gt;
