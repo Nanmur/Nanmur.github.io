@@ -7,7 +7,844 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nanmur</copyright>
-        <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://Nanmur.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 19 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://Nanmur.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Web ASP网页程序设计笔记</title>
+        <link>https://Nanmur.github.io/p/asp/</link>
+        <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://Nanmur.github.io/p/asp/</guid>
+        <description>&lt;img src="https://Nanmur.github.io/p/asp/Weblogo.png" alt="Featured image of post Web ASP网页程序设计笔记" /&gt;&lt;h2 id=&#34;第1章aspnet运行及开发环境知识点总结&#34;&gt;第1章ASP.NET运行及开发环境知识点总结
+&lt;/h2&gt;&lt;h3 id=&#34;1-aspnet概述&#34;&gt;1. ASP.NET概述
+&lt;/h3&gt;&lt;h4 id=&#34;11静态页面和动态页面&#34;&gt;1.1静态页面和动态页面
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;静态页面&lt;/strong&gt;：仅含HTML元素和CSS样式，扩展名.htm或.html，内容固定，由浏览器解释执行，访问速度快，适用于内容无需通过数据库更新的情况。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;动态页面&lt;/strong&gt;：包含HTML、CSS、JavaScript及服务器端编译执行代码，开发技术多样，内容存储于数据库，需服务器转换为静态页面后在浏览器显示，适用于内容需动态更新的场景。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;二者关系&lt;/strong&gt;：ASP.NET网站可同时存在静态和动态页面。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;12net-framework&#34;&gt;1.2.NET Framework
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;定义&lt;/strong&gt;：是Microsoft应用程序开发框架，提供一致开发模型。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;主要组件&lt;/strong&gt;：公共语言运行库（CLR）和.NET Framework类库。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;13aspnet特性&#34;&gt;1.3ASP.NET特性
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;是.NET Framework组件，与.NET Framework完美整合，属于编译型。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;14aspnet的开发模式&#34;&gt;1.4ASP.NET的开发模式
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ASP.NET Web窗体&lt;/strong&gt;：常用模式，包含页面呈现标记和处理事件代码。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ASP.NET MVC&lt;/strong&gt;：包含模型、视图和控制器，模型处理数据逻辑，视图显示界面，控制器协调两者。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ASP.NET Core&lt;/strong&gt;：ASP.NET重构版本，可跨平台开发部署。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-iis&#34;&gt;2. IIS
+&lt;/h3&gt;&lt;h4 id=&#34;21iis-75的安装&#34;&gt;2.1IIS 7.5的安装
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;通过“开始”→“控制面板”→“程序”→“打开或关闭Windows功能”安装，若IIS 7.5在VS 2017安装后安装，需以管理员身份运行cmd.exe并输入特定命令注册ASP.NET。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;22iis-75中的网站web应用程序和虚拟目录&#34;&gt;2.2IIS 7.5中的网站、Web应用程序和虚拟目录
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;网站&lt;/strong&gt;：Web应用程序容器。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Web应用程序&lt;/strong&gt;：在应用程序池中运行，通过HTTP提供Web内容。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;虚拟目录&lt;/strong&gt;：映射物理文件夹的别名。三者呈层次关系，通过“Internet信息服务(IIS)管理器”配置，相关信息存储在特定配置文件中。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;操作示例&lt;/strong&gt;：包括添加网站、应用程序池、Web应用程序、虚拟目录及设置默认文档（可通过“功能视图”或Web.config配置文件设置）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;23iis-express&#34;&gt;2.3IIS Express
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;默认用于运行网站，配置信息保存于特定文件，该文件所在文件夹具有隐藏属性且与解决方案文件同处。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-visual-studio-community-2017&#34;&gt;3. Visual Studio Community 2017
+&lt;/h3&gt;&lt;h4 id=&#34;31开发环境概览&#34;&gt;3.1开发环境概览
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;提供方便的ASP.NET网站开发环境，免费且功能齐全，与VS 2017商用版创建的Web应用程序兼容，适用于学习和中小企业开发。开发环境中有“调试运行”“编排整个文档的格式”等按钮，可通过相关命令设置环境（如字体、颜色、项目和解决方案、文本编辑器等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;32使用解决方案管理vsc-2017中新建的网站&#34;&gt;3.2使用解决方案管理VSC 2017中新建的网站
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;可新建空白解决方案，再向其中添加不同类型项目（如ASP.NET空网站等），在解决方案资源管理器中管理项目文件结构。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;33发布web应用&#34;&gt;3.3发布Web应用
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;可部署到Microsoft Azure或IIS，发布方式多样（如Web部署、Web Deploy包、FTP、文件系统等），涉及预编译（将特定文件编译为.dll程序集）和动态编译（页面访问时自动编译并缓存输出），需以管理员身份启动VSC 2017进行发布操作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;34复制网站&#34;&gt;3.4复制网站
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;在当前与另一网站间复制文件，不预编译，支持同步，常用于网站迁移，可组合“发布网站”和“复制网站”保护源代码。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-小结&#34;&gt;4. 小结
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ASP.NET网站含静态和动态页面，.NET Framework是基础，开发模式多样，IIS提供运行环境，VSC 2017方便开发。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第2章aspnet网站文件jquery和bootstrap知识点总结&#34;&gt;第2章ASP.NET网站文件、jQuery和Bootstrap知识点总结
+&lt;/h2&gt;&lt;h3 id=&#34;1-html文件和xhtml5&#34;&gt;1. HTML文件和XHTML5
+&lt;/h3&gt;&lt;h4 id=&#34;11html文件结构&#34;&gt;1.1HTML文件结构
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;由DOCTYPE声明、html根元素、head头部和body主体部分组成，head中包含meta元信息、title标题等，body包含页面内容。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;12常用xhtml5元素&#34;&gt;1.2常用XHTML5元素
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;注释、DOCTYPE声明、html元素、head元素、meta元素（设置字符集、提供关键词等）、title元素、style元素、body元素、header、aside、section、article、footer、nav、h1 - h6标题、div层、p段落、br换行、hr水平线、table表格、a超链接等，还有常用实体符号。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-aspx文件&#34;&gt;2. ASPX文件
+&lt;/h3&gt;&lt;h4 id=&#34;21单文件页模型&#34;&gt;2.1单文件页模型
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;界面和逻辑代码放同一.aspx文件，逻辑代码在&lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt;之上的&lt;code&gt;&amp;lt;script runat=&amp;quot;server&amp;quot;&amp;gt;&lt;/code&gt;中，通过事件名关联执行方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;22代码隐藏页模型&#34;&gt;2.2代码隐藏页模型
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;界面代码在.aspx文件，逻辑处理代码在.aspx.cs文件，.aspx文件通过@Page指令引用外部文件，包括AutoEventWireup、CodeFile、Inherits等属性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-css文件和css常识&#34;&gt;3. CSS文件和CSS常识
+&lt;/h3&gt;&lt;h4 id=&#34;31定义css3样式&#34;&gt;3.1定义CSS3样式
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;选择器类型&lt;/strong&gt;：*选择器（全局设置）、元素选择器（重定义XHTML元素属性）、属性选择器（多种属性条件选择）、类选择器（应用于不同或子集元素）、id选择器（单个元素属性设置）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;样式声明&lt;/strong&gt;：由属性和值组成。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;32css3样式位置&#34;&gt;3.2CSS3样式位置
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;内联样式（在XHTML元素style属性中，优先级最高）、页面样式（在&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;的&lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;元素中）、外部样式表（.css文件，通过&lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt;元素链接到页面，优先级最低）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-js文件和javascript常识&#34;&gt;4. JS文件和JavaScript常识
+&lt;/h3&gt;&lt;h4 id=&#34;41javascript代码位置&#34;&gt;4.1JavaScript代码位置
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;中（通常为函数，调用时执行）、&lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;中（页面载入时执行）、独立.js文件（多个页面调用时使用，通过&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;的src属性引入）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;42综合实例&#34;&gt;4.2综合实例
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;实现图片动态变化（鼠标指向切换图片）、简易时钟（显示客户端时间）等功能，涉及事件触发、函数调用、元素操作等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-jquery&#34;&gt;5. jQuery
+&lt;/h3&gt;&lt;h4 id=&#34;51jquery基础语法&#34;&gt;5.1jQuery基础语法
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;格式$(selector).action()，selector选择对象，action执行操作，常用选择器（*、元素、属性、类、id、first、contains等）和方法（attr、bind、click、css、fadeIn等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;52综合实例&#34;&gt;5.2综合实例
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;管理XHTML元素（隐藏、显示、更改内容和样式、淡入淡出等）、实现时间数据来源于服务器端的时钟（通过Ajax实现局部刷新）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;6-xml文件和xml常识&#34;&gt;6. XML文件和XML常识
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;用于跨平台交换数据，可自定义标记，与XHTML区别（XML传输存储数据，XHTML显示数据），XML文件结构包含声明、根元素、子元素等，如早餐菜单示例。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;7-webconfig&#34;&gt;7. Web.config
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;XML格式，存储配置信息，有网站根文件夹和子文件夹层级关系，包含连接字符串、身份验证、页面、会话状态等配置节点。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;8-globalasax&#34;&gt;8. Global.asax
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;全局应用程序类文件，存储应用程序和会话级别事件响应代码，如启动、关闭、错误、会话开始和结束等事件处理方法，必须在根文件夹且唯一。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;9-bootstrap&#34;&gt;9. Bootstrap
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;主流Web前端框架，基于HTML5、CSS3、JavaScript和jQuery，支持响应式设计，通过NuGet安装，引用相关CSS和JS文件（注意依赖jQuery），有预设置样式、可重用组件和自定义插件，如用于设计表单（通过class或CssClass属性调用类选择器）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;10-小结&#34;&gt;10. 小结
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ASPX文件内容最终转化为XHTML显示，开发常用代码隐藏页模型，CSS统一风格，JavaScript提供动态功能，jQuery方便控制元素，XML用于数据交换，Web.config存储配置，Global.asax处理全局和会话事件，Bootstrap是主流前端框架。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第3章c和aspnet的结合知识点总结&#34;&gt;第3章C##和ASP.NET的结合知识点总结
+&lt;/h2&gt;&lt;h3 id=&#34;1-c概述&#34;&gt;1. C##概述
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;为.NET打造，运行于.NET Framework环境，可构建健壮应用，有统一类型系统和组件编程支持，不直接操作内存。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2net-framework命名空间&#34;&gt;2..NET Framework命名空间
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;常用命名空间如System（基本类）、System.Configuration（配置文件处理类）、System.Data（ADO.NET类访问）、System.Web（浏览器与服务器通信类）等，涵盖数据访问、Web开发、安全等功能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-编程规范&#34;&gt;3. 编程规范
+&lt;/h3&gt;&lt;h4 id=&#34;31程序注释&#34;&gt;3.1程序注释
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;类、方法、属性用XML文档格式注释，在类接口头部、公共方法前、代码块结束、分支语句处应编写注释。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;32命名规则&#34;&gt;3.2命名规则
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Pascal形式（首字母及连接单词首字母大写）用于类、枚举类型、方法等；Camel形式（首字母小写，连接单词首字母大写）用于参数、变量名等，还有常用控件名简写规范。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-常量与变量&#34;&gt;4. 常量与变量
+&lt;/h3&gt;&lt;h4 id=&#34;41常量声明&#34;&gt;4.1常量声明
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;用const声明，需初始化，有访问修饰符，值在编译时不变。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;42变量声明&#34;&gt;4.2变量声明
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;先声明后使用，由数字、字母、下划线组成，区分大小写，修饰符决定访问范围，方法中定义的局部变量不能用部分修饰符，有静态变量（类直接访问）和只读变量（初始化后不可改）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;43修饰符&#34;&gt;4.3修饰符
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;包括public、internal、protected、protected internal、private、static、readonly，影响变量访问范围和特性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;44局部变量作用范围&#34;&gt;4.4局部变量作用范围
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;块级（if、while等语句内）、方法级（声明方法内）、对象级（类所有方法内，页面结束时删除）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-数据类型&#34;&gt;5. 数据类型
+&lt;/h3&gt;&lt;h4 id=&#34;51值类型&#34;&gt;5.1值类型
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;包含简单类型（整数、布尔、字符、实数）、结构类型、枚举类型，变量直接存数据，操作互不影响。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;52引用类型&#34;&gt;5.2引用类型
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;有class类型、object类型、string类型、接口类型、数组类型、委托类型，变量存数据引用，操作可能影响其他引用同一对象的变量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;53装箱和拆箱&#34;&gt;5.3装箱和拆箱
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;实现值类型与引用类型转换，装箱是值转对象，拆箱是对象转值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;6-运算符&#34;&gt;6. 运算符
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;总结常用运算符及优先级（表格形式呈现）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;7-流程控制&#34;&gt;7. 流程控制
+&lt;/h3&gt;&lt;h4 id=&#34;71选择结构&#34;&gt;7.1选择结构
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;If语句（两种格式，判断相等用“==”）、switch语句（按控制表达式值匹配执行相应语句序列）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;72循环结构&#34;&gt;7.2循环结构
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;While语句（先判断条件再执行语句序列）、do - while循环（先执行一次语句序列再判断条件）、for语句（按初始化、条件判断、控制表达式执行循环）、foreach语句（枚举数组或集合元素）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;73异常处理&#34;&gt;7.3异常处理
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;异常产生于操作异常，处理方式有throw语句（抛出异常）和try&amp;hellip;catch&amp;hellip;finally结构（捕获并处理异常）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;8-自定义aspnet类&#34;&gt;8. 自定义ASP.NET类
+&lt;/h3&gt;&lt;h4 id=&#34;81类的常识&#34;&gt;8.1类的常识
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;ASP.NET面向对象，类是模板，有封装性（隐藏实现方法，暴露属性方法）、继承性（类继承特征）、多态性（继承类有同名方法），创建类用特定语法格式，修饰符有多种。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;82属性&#34;&gt;8.2属性
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;通过get和set访问器获取或改变私有字段内容，体现封装性，只读属性仅含get访问器。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;83构造函数&#34;&gt;8.3构造函数
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;实例化对象时调用，与类名相同且为public，若未定义，编译器自动提供默认构造函数，可用于初始化对象参数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;84方法&#34;&gt;8.4方法
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;反映对象行为，有访问修饰符，void修饰符表示无返回值，如银行账户类的存款取款方法（含异常处理）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;85事件&#34;&gt;8.5事件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;用于类间传递消息或触发行为，通过委托声明，有定义、触发、注册和编写处理代码等步骤，如账户金额不足事件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;86继承&#34;&gt;8.6继承
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;重用基类数据行为并扩展功能，派生类继承基类，如企业账户类继承账户类并增加属性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;9-aspnet页面调试&#34;&gt;9. ASP.NET页面调试
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;调试检查代码运行，配置Web.config文件&lt;code&gt;&amp;lt;system.web&amp;gt;&lt;/code&gt;元素的&lt;code&gt;&amp;lt;compilation&amp;gt;&lt;/code&gt;为调试模式（debug=&amp;ldquo;true&amp;rdquo;），常用操作有断点设置（右击语句选择“断点”→“插入断点”），调试中可用F5启动、“局部变量”窗口查看变量、“监视”窗口监视变量表达式、“即时窗口”计算输出更改变量、F10逐过程、F11逐语句、Shift+F5结束调试。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;10-小结-1&#34;&gt;10. 小结
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;C##适合ASP.NET开发，遵循.NET Framework命名空间和编程规范，处理异常使程序健壮，自定义类扩展功能，要注重页面调试能力培养。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第4章aspnet标准控件知识点总结&#34;&gt;第4章ASP.NET标准控件知识点总结
+&lt;/h2&gt;&lt;h3 id=&#34;1-aspnet页面事件处理概述&#34;&gt;1. ASP.NET页面事件处理概述
+&lt;/h3&gt;&lt;h4 id=&#34;11aspnet页面事件&#34;&gt;1.1ASP.NET页面事件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;常见页面事件包括Page.PreInit（确定页面处理、创建动态控件等）、Page.Init（初始化控件属性）、Page.Load（读取更新控件属性）、控件事件（如Click、Changed等），事件处理顺序为Page.PreInit、Page.Init、Page.Load和控件事件，Click事件引发页面往返，Changed事件信息暂存客户端，AutoPostBack属性为True时可使Changed事件立即响应服务器，设置逻辑值属性时在.aspx和.aspx.cs文件中有大小写区别。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;12ispostback属性&#34;&gt;1.2IsPostBack属性
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;用于判断页面是否为首次加载，在@Page指令AutoEventWireup属性为true时，ASP.NET自动绑定页面事件，控件事件需设置On事件名属性绑定，可通过判断Page.IsPostBack属性值决定是否执行Page_Load方法代码。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-aspnet服务器控件概述&#34;&gt;2. ASP.NET服务器控件概述
+&lt;/h3&gt;&lt;h4 id=&#34;21html服务器控件简介&#34;&gt;2.1HTML服务器控件简介
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;将XHTML元素转换为服务器控件，在“源”视图中为XHTML元素添加runat=&amp;ldquo;server&amp;quot;属性实现转换。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;22web服务器控件简介&#34;&gt;2.2Web服务器控件简介
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;包括标准控件（按钮、文本框等）、数据控件（数据库操作）、验证控件（用户输入验证）、导航控件（网站导航）、AJAX扩展控件（局部更新）、动态数据控件（创建动态数据页面）、用户自定义控件（扩展功能）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-常用aspnet标准控件&#34;&gt;3. 常用ASP.NET标准控件
+&lt;/h3&gt;&lt;h4 id=&#34;31label控件&#34;&gt;3.1Label控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;用于显示文本，Text属性设置显示内容，AssociatedControlID属性可关联其他服务器控件，如通过设置快捷键激活特定文本框。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;32textbox控件&#34;&gt;3.2TextBox控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;文本框类型由TextMode属性设置，AutoPostBack属性为true时内容改变且焦点移出触发TextChanged事件，AutoCompleteType属性指定自动完成类型，Focus方法设置焦点，如在登录页面中实现焦点定位、用户名可用性判断、密码框显示和邮箱自动完成功能（实际应用需连接数据库）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;33buttonlinkbutton和imagebutton控件&#34;&gt;3.3Button、LinkButton和ImageButton控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Button为传统按钮外观，LinkButton为超链接外观，ImageButton为图形外观（由ImageUrl属性设置），PostBackUrl属性用于跨页面提交，Click事件执行服务器端代码，ClientClick事件在Click事件前执行客户端代码，LinkButton可通过PostBackUrl属性或Click事件中的Redirect方法实现超链接，如删除数据时弹出确认对话框。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;34dropdownlist控件&#34;&gt;3.4DropDownList控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;数据源由DataSource属性设置，DataTextField和DataValueField属性对应数据源字段用于显示和取值，Items属性为选项集合（可添加、删除项），SelectedItem和SelectedValue属性获取当前选定项，SelectedIndexChanged事件在选择项改变时触发，DataBind方法绑定数据源，如实现日期联动下拉列表（年、月改变时更新日的选项）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;35listbox控件&#34;&gt;3.5ListBox控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;与DropDownList类似但列表可见且可多选，SelectionMode属性为Multiple时允许选择多项，如实现数据项在两个ListBox控件间移动。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;36checkbox和checkboxlist控件&#34;&gt;3.6CheckBox和CheckBoxList控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;用于“真/假”等选项选择，CheckBox用Checked属性判断是否选中，CheckBoxList用成员的Selected属性判断，实际工程中CheckBoxList的AutoPostBack属性常为False，配合Button控件提交数据，如选择个人爱好后单击按钮显示提示信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;37radiobutton和radiobuttonlist控件&#34;&gt;3.7RadioButton和RadioButtonList控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;用于单项选择，多个RadioButton通过GroupName属性形成一组，RadioButton用Checked属性判断是否选中，RadioButtonList用SelectedItem属性获取选中项。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;38image和imagemap控件&#34;&gt;3.8Image和ImageMap控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Image用于显示图片（由ImageUrl属性指定源文件，常与数据源绑定），无Click事件，ImageMap可划分热点区域（通过HotSpot集合编辑器设置），点击热点链接到不同页面，如用ImageMap设计导航条。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;39hyperlink控件&#34;&gt;3.9HyperLink控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;创建链接，可与数据源绑定，Target属性指定链接页面显示方式（_blank新窗口，_self原窗口），无Click事件，Text和ImageUrl属性同时设置时ImageUrl优先，如组合HyperLink和Image控件实现图片尺寸不同效果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;310table控件&#34;&gt;3.10Table控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;动态创建表格（与用于布局的&lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt;元素不同），由TableRow对象组成行，TableCell对象组成单元格，添加行、单元格和控件分别使用Rows、Cells、Controls属性，如创建简易成绩录入界面。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;311panel和placeholder控件&#34;&gt;3.11Panel和PlaceHolder控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;都为容器控件，用于动态创建控件和根据情况显示不同内容，Panel可在同一页面呈现不同内容（通过设置可见性），PlaceHolder在页面载入时动态添加控件（动态生成控件代码需在Page_Load方法中，不能直接绑定方法代码需手工注册，获取输入信息需用FindControl方法），如用Panel实现简易注册页面和用PlaceHolder动态添加控件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-小结-1&#34;&gt;4. 小结
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;理解ASP.NET页面事件处理流程及常用事件触发顺序，利用IsPostBack属性控制页面往返时代码执行，可转换XHTML元素为HTML服务器控件，Web服务器标准控件是构建Web窗体的基础。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第5章aspnet窗体验证知识点总结&#34;&gt;第5章ASP.NET窗体验证知识点总结
+&lt;/h2&gt;&lt;h3 id=&#34;1-窗体验证概述&#34;&gt;1. 窗体验证概述
+&lt;/h3&gt;&lt;h4 id=&#34;11验证概念&#34;&gt;1.1验证概念
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;验证是为收集的数据制定规则，不能确保数据真实性，仅判断是否满足规则，分为客户端（利用JavaScript在数据发送到服务器前验证）和服务器端（将用户输入信息发送到Web服务器验证）两种形式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;12配置相关&#34;&gt;1.2配置相关
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;隐式验证配置：通过NuGet安装jQuery，在Global.asax文件的Application_Start方法中添加代码映射jQuery路径；禁用隐式验证在Web.config文件&lt;code&gt;&amp;lt;configuration&amp;gt;&lt;/code&gt;元素中添加配置代码。Page.IsValid属性用于判断页面所有控件是否通过验证（true为通过，false为未通过）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-aspnet服务器验证控件&#34;&gt;2. ASP.NET服务器验证控件
+&lt;/h3&gt;&lt;h4 id=&#34;21通用属性&#34;&gt;2.1通用属性
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;基本属性&lt;/strong&gt;：ControlToValidate指定要验证控件ID；Display指定显示方式（Static始终占用、Dynamic验证错误时占用、None在ValidationSummary控件显示）；EnableClientScript设置是否启用客户端验证（默认True）；ErrorMessage设置在ValidationSummary中显示错误信息（Text为空时代替）；SetFocusOnError确定验证无效时是否定位焦点；Text设置验证控件显示信息；ValidationGroup设置分组名；CausesValidation属性值False表示不执行验证。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多规则验证&lt;/strong&gt;：对一个控件设置多个规则用多个验证控件，ControlToValidate属性相同；分组验证通过设置同一组控件的ValidationGroup属性为相同组名实现。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;22requiredfieldvalidator控件&#34;&gt;2.2RequiredFieldValidator控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;用于验证必须输入信息的控件，如用户名、密码等，InitialValue属性指定被验证控件初始文本，输入值与初始值不同时验证才通过，如禁止用户名空数据且不能与初始值相同。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;23comparevalidator控件&#34;&gt;2.3CompareValidator控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;比较一个控件值与另一个控件值或指定值，ControlToCompare指定比较控件ID，Operator设置操作符，Type设置数据类型，ValueToCompare指定比较值（ControlToCompare和ValueToCompare只能选一个），如密码和确认密码是否一致、答案是否为特定值、金额数据类型验证。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;24rangevalidator控件&#34;&gt;2.4RangeValidator控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;验证输入值是否在指定范围，通过MaximumValue和MinimumValue属性设置范围，如成绩在0 - 100之间、日期在特定区间内。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;25regularexpressionvalidator控件&#34;&gt;2.5RegularExpressionValidator控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;验证输入值与正则表达式是否匹配，常用于电话号码、邮政编码、Email等验证，ValidationExpression属性确定正则表达式，如验证电子邮件地址格式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;26customvalidator控件&#34;&gt;2.6CustomValidator控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;当自带验证控件无法满足需求时使用，通过自定义验证函数调用，客户端验证需设置ClientValidationFunction属性为函数名且EnableClientScript为True，服务器端验证通过ServerValidate事件触发，IsValid属性确定是否通过验证，如验证输入值是否为偶数（有客户端、服务器端和混合验证三种形式）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;27validationsummary控件&#34;&gt;2.7ValidationSummary控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;汇总其他验证控件错误信息（ErrorMessage属性值），DisplayMode指定显示格式（BulletList、List、SingleParagraph），ShowMessageBox确定是否在弹出消息框显示错误信息，ShowSummary确定是否启用错误信息汇总，如综合运用多种验证控件时汇总错误信息（可设置焦点定位、错误信息显示方式等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-小结&#34;&gt;3. 小结
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;窗体验证常同时使用客户端和服务器端验证，ASP.NET提供多种验证功能（必需输入、比较、范围、正则表达式、自定义、错误汇总），实际中同一控件可能使用多个验证控件以达到效果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第6章http请求响应及状态管理知识点总结&#34;&gt;第6章HTTP请求、响应及状态管理知识点总结
+&lt;/h2&gt;&lt;h3 id=&#34;1-http请求&#34;&gt;1. HTTP请求
+&lt;/h3&gt;&lt;h4 id=&#34;11httprequest对象&#34;&gt;1.1HttpRequest对象
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;通过Page类的Request属性访问，封装HTTP请求信息，包含QueryString（读取查询字符串数据）、Cookies（获取客户端Cookie）、ServerVariables（获取服务器或客户端环境变量）、Browser（获取客户端浏览器信息）等数据集合，使用时通过Page类的Request属性调用，如利用QueryString在页面间传递数据、通过ServerVariables和Browser返回服务器端和客户端信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-http响应&#34;&gt;2. HTTP响应
+&lt;/h3&gt;&lt;h4 id=&#34;21httpresponse对象&#34;&gt;2.1HttpResponse对象
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;通过Page类的Response属性控制输出，实例为HttpResponse类对象，有Cookies属性（添加修改客户端Cookie）、AppendToLog方法（添加自定义日志到IIS日志文件）、End方法（终止页面执行）、Redirect方法（页面重定向，可传数据）、Write方法（输出信息）等，如利用Write方法输出XHTML文本、用Redirect方法重定向页面。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-httpserverutility&#34;&gt;3. HttpServerUtility
+&lt;/h3&gt;&lt;h4 id=&#34;31对象功能&#34;&gt;3.1对象功能
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Page类的Server属性封装服务器端操作，实例为HttpServerUtility类对象，有ScriptTimeOut属性（设置页面执行最长时间）、Execute方法（停止当前页面转去执行新页面后返回）、HtmlEncode方法（转换XHTML元素标记为字符实体）、MapPath方法（获取页面物理路径）、Transfer方法（停止当前页面转去执行新页面后不返回）、UrlEncode方法（转换特殊字符为URL编码）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;32重定向方法区别&#34;&gt;3.2重定向方法区别
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Redirect方法在客户端重定向（浏览器地址栏变化），Execute和Transfer方法在服务器端重定向（地址栏不变）；Redirect和Transfer方法执行新页面后不返回原页面，Execute方法返回；Redirect可重定向到任意页面，Execute和Transfer只能在同一网站内；Redirect用查询字符串传递数据，Execute和Transfer与Button跨页面提交方式相同，如运用HttpServerUtility对象处理URL地址。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-跨页面提交&#34;&gt;4. 跨页面提交
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;通过设置Button类型控件的PostBackUrl属性为目标页面路径实现，目标页面需添加@PreviousPageType指令并设置VirtualPath属性为源页面路径，目标页面访问源页面数据可通过PreviousPage.FindControl方法或源页面公共属性，IsCrossPagePostBack属性可区分跨页面提交与调用Server.Execute或Server.Transfer方法，如运用跨页面提交技术实现页面间数据传递。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-状态管理&#34;&gt;5. 状态管理
+&lt;/h3&gt;&lt;h4 id=&#34;51管理方式概述&#34;&gt;5.1管理方式概述
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;分为客户端（ViewState、ControlState、HiddenField、Cookie、查询字符串，不耗服务器内存但易泄露数据）和服务器端（Session、Application、数据库，耗服务器内存但安全），如利用Cookie或Session限制页面访问、统计网站在线人数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;52viewstate&#34;&gt;5.2ViewState
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;维护Web窗体状态，封装为隐藏表单域在客户端和服务器端传递，EnableViewState属性可禁用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;53hiddenfield控件&#34;&gt;5.3HiddenField控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;维护Web窗体状态，不显示在浏览器，有Value属性和ValueChanged事件（需EnableViewState为False触发）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;54cookie&#34;&gt;5.4Cookie
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;存储在客户端的文本信息，与网站关联，可在客户端修改或禁用，通过System.Web.HttpCookie类处理，有Value和Expires等属性，可在Web.config中设置相关选项，如利用Cookie限制页面访问。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;55session&#34;&gt;5.5Session
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;存储用户信息等，服务器端产生，为当前用户服务，以Session ID标识，可通过Cookie或URL传递（明文，可考虑HTTPS保护），有Contents、Mode、SessionID、TimeOut等属性和Abandon、Remove等方法，包含Session_Start和Session_End方法（在Global.asax文件中，仅sessionState模式为InProc时执行Session_End方法），通过多种方式赋值，在Web.config中设置存储方式（常用StateServer，大型网站常用SQLServer）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;56application&#34;&gt;5.6Application
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;应用于所有用户，网站运行时存在，关闭时释放，通过System.Web.HttpApplicationState类实现，修改值需先锁定再解锁，有Application_Start、Application_End、Application_Error等方法，如统计网站在线人数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;6-小结&#34;&gt;6. 小结
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;HttpRequest对象访问不同数据，HttpResponse对象控制输出，HttpServerUtility对象有多种实用方法（防范SQL注入常用HtmlEncode方法），页面重定向有多种形式且注意区别，状态管理分客户端和服务器端形式且各有特点（Session对应单个用户，Application对应所有用户）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第7章数据访问知识点总结&#34;&gt;第7章数据访问知识点总结
+&lt;/h2&gt;&lt;h3 id=&#34;1-数据访问概述&#34;&gt;1. 数据访问概述
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ASP.NET 1.x主要用ADO.NET访问数据，在ASP.NET 2.0中增加多种数据源和数据绑定控件，ASP.NET 3.5引入LINQ技术，ASP.NET 4.0扩展了该技术（新增LINQ to Entities），LINQ to SQL工具需在VSC 2017中手动选中安装。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-建立sql-server-2016-express数据库&#34;&gt;2. 建立SQL Server 2016 Express数据库
+&lt;/h3&gt;&lt;h4 id=&#34;21数据库版本&#34;&gt;2.1数据库版本
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;SQL Server 2016 Express免费，适用于学习和中小型企业开发；SQL Server 2016 Express LocalDB更轻量级，开发时无需配置，但发布到IIS 7.5时需更改连接字符串。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;22连接字符串&#34;&gt;2.2连接字符串
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;存储在Web.config文件&lt;connectionStrings&gt;`元素中，根据数据库实例类型（SQL Server、SQLEXPRESS、LocalDB）和身份验证形式（Windows验证或SQL Server验证）配置，如访问MyPetShop数据库的连接字符串配置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;23mypetshop数据库&#34;&gt;2.3MyPetShop数据库
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;包含多个数据表，通过MyPetShop.sql建立，默认属于LocalDB实例，为支持中文处理可指定排序规则参数，其连接字符串也需相应配置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-使用数据源控件实现数据访问&#34;&gt;3. 使用数据源控件实现数据访问
+&lt;/h3&gt;&lt;h4 id=&#34;31数据源控件类型&#34;&gt;3.1数据源控件类型
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;EntityDataSource（访问实体数据模型数据）、LinqDataSource（用LINQ技术访问数据库）、ObjectDataSource（访问多层应用中间层业务对象数据）、SiteMapDataSource（访问网站地图文件）、SqlDataSource（访问多种数据源）、XmlDataSource（访问XML数据源）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;32功能特点&#34;&gt;3.2功能特点
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;提供统一编程模型，通过定义事件实现数据操作（Select、Update、Delete、Insert等），数据操作前后事件可编写代码实现灵活功能，如利用LinqDataSource和GridView显示表数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-使用linq实现数据访问&#34;&gt;4. 使用LINQ实现数据访问
+&lt;/h3&gt;&lt;h4 id=&#34;41linq类型&#34;&gt;4.1LINQ类型
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;LINQ集成于.NET Framework，包括LINQ to Objects（处理集合类型数据）、LINQ to XML（处理XML数据）、LINQ to DataSet（处理DataSet数据）、LINQ to SQL（处理SQL Server数据库数据）、LINQ to Entities（处理实体数据模型）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;42linq查询表达式&#34;&gt;4.2LINQ查询表达式
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;包含from（指定数据源和范围变量）、select（指定结果类型和形式）、where（指定筛选条件）、group（分组）、orderby（排序）、join（连接数据源）、let（创建子表达式范围变量）、into（提供临时标识符）等子句，以from开始，以select或group结束，可实现多种数据操作，如投影（创建匿名对象选择属性）、选择（过滤记录）、排序、分组（结果为集合的集合，需嵌套循环访问）、聚合（使用Count、Max、Min、Average等方法，参数常用Lambda表达式）、连接（可直接引用对象或用join子句，适用于外键关联或未关联表）、模糊查询（调用SqlMethods.Like方法）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;43linq-to-sql概述&#34;&gt;4.3LINQ to SQL概述
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;数据库与对象映射关系：SQL Server数据库对应DataContext类，表对应实体类，属性对应属性，外键关系对应关联，存储过程对应方法。MyPetShop.dbml定义数据库架构、布局及自动生成相关类（与数据库对应的类和各表实体类），实体类通过特定属性映射数据表关系，在MyPetShopDataContext类中存储过程映射为方法及参数映射。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;44利用linq-to-sql管理数据&#34;&gt;4.4利用LINQ to SQL管理数据
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;插入数据：用InsertAllOnSubmit（插入集合数据实体）和InsertOnSubmit（插入单个实体）方法，如向Category表插入数据。&lt;/li&gt;
+&lt;li&gt;修改数据：先找到需修改数据再操作，如根据CategoryId修改数据（CategoryId标识值不能改）。&lt;/li&gt;
+&lt;li&gt;删除数据：用DeleteAllOnSubmit（删除实体集合）和DeleteOnSubmit（删除单个实体）方法，如根据CategoryId删除数据。&lt;/li&gt;
+&lt;li&gt;存储过程：将SQL Server中存储过程拖入MyPetShop.dbml生成对应方法，调用方法使用存储过程，如利用存储过程插入数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;45linq-to-xml概述&#34;&gt;4.5LINQ to XML概述
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;XDocument类操作XML文档（Save方法建立文档），XDeclaration类操作声明，XComment类操作注释，XAttribute类操作元素属性，XElement类操作元素（包括获取名称、值、导入导出文档、获取属性、删除替换元素内容、设置属性值等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;46利用linq-to-xml管理xml文档&#34;&gt;4.6利用LINQ to XML管理XML文档
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;创建XML文档：用XDocument对象添加声明、元素、注释等内容后保存。&lt;/li&gt;
+&lt;li&gt;查询XML文档：用LINQ查询表达式可实现多种查询（读取、根元素、指定名称元素、指定属性元素、指定元素子元素等）。&lt;/li&gt;
+&lt;li&gt;插入元素：建立XElement实例添加内容后用Add方法插入并保存。&lt;/li&gt;
+&lt;li&gt;修改元素：查找元素后用SetAttributeValue和ReplaceNodes方法修改并保存。&lt;/li&gt;
+&lt;li&gt;删除元素：查找元素后用Remove方法删除并保存。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-小结&#34;&gt;5. 小结
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;LINQ技术与编程语言整合，将数据作为对象处理，符合发展趋势，能简洁实现数据操作，是Microsoft主要数据访问技术。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第8章数据绑定知识点总结&#34;&gt;第8章数据绑定知识点总结
+&lt;/h2&gt;&lt;h3 id=&#34;1-数据绑定概述&#34;&gt;1. 数据绑定概述
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;数据绑定控件与数据源控件结合时设置DataSourceID属性为数据源控件ID；与LINQ技术结合时设置DataSource属性为LINQ查询结果并调用DataBind方法显示数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-listcontrol类控件&#34;&gt;2. ListControl类控件
+&lt;/h3&gt;&lt;h4 id=&#34;21控件属性&#34;&gt;2.1控件属性
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;AppendDataBoundItems用于追加数据绑定项到静态列表项；DataTextField绑定用于显示的字段；DataValueField绑定用于设置值的字段。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;22实例应用&#34;&gt;2.2实例应用
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;如DropDownList与LINQ结合显示Category表数据（页面加载绑定数据，选择项改变时触发事件显示选中项CategoryId值）；根据单选按钮选择项填充列表框内容（选择分类时在列表框显示该分类商品名称）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-gridview控件&#34;&gt;3. GridView控件
+&lt;/h3&gt;&lt;h4 id=&#34;31基本功能&#34;&gt;3.1基本功能
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;用于显示二维表格式数据，可实现数据绑定、分页（AllowPaging为True，可在PagerSettings设置效果）、排序（AllowSorting为True）、行选择、更新、删除等功能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;32定制列操作&#34;&gt;3.2定制列操作
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;自定义列需设置AutoGenerateColumns为False，列类型有BoundField（显示文本）、CheckBoxField（显示布尔型数据）、CommandField（创建命令按钮列）、DynamicField（绑定动态数据列）、ImageField（显示图片列）、HyperLinkField（显示超链接列）、ButtonField（定义按钮列）、TemplateField（自定义模板列），如设置ImageField列的DataImageUrlField属性显示图片（数据库存储路径时直接设置，仅存储文件名时需配合DataImageUrlFormatString属性）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;33模板列应用&#34;&gt;3.3模板列应用
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;TemplateField有多种模板（AlternatingItemTemplate、EditItemTemplate、FooterTemplate、HeaderTemplate、ItemTemplate、PagerTemplate），AlternatingItemTemplate与ItemTemplate配合使用决定数据行显示方式。数据绑定方法有Eval（单向只读绑定）和Bind（双向可更新绑定），需包含在&lt;code&gt;&amp;lt;%##...%&amp;gt;&lt;/code&gt;中，还可绑定变量等，在模板列中访问控件需用FindControl方法，如利用GridView模板列实现复选框全选及获取选中商品编号。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;34编辑删除数据&#34;&gt;3.4编辑删除数据
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;单击智能标记选择“启用编辑”和“启用删除”提供编辑删除功能（数据源控件需支持），如为“删除”按钮添加客户端提示信息（需处理RowDataBound事件，考虑主键字段特性及编辑时按钮消失情况）；结合GridView和独立页修改数据（通过链接跳转到独立页，传递参数查询并修改数据）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;35显示主从表&#34;&gt;3.5显示主从表
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;对应数据库“一对多”联系，可在同一页（如单击“选择”链接在“从表”显示“主表”对应商品，通过gvCategory.SelectedValue传递参数）或不同页（单击“主表”链接在“从表”显示对应商品，传递查询字符串查询绑定数据）显示。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-detailsview控件&#34;&gt;4. DetailsView控件
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;以表格形式显示处理单条记录（一列显示字段名，一列显示值），增加数据插入功能，如结合GridView和DetailsView管理数据（单击GridView“详细资料”链接在DetailsView显示详细信息，可进行编辑、删除、新建操作，需处理ItemDeleted和ItemInserted事件刷新GridView数据）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-小结-1&#34;&gt;5. 小结
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ListControl类以列表形式显示数据；GridView以二维表格形式显示，功能丰富；DetailsView以单条记录形式显示；还有ListView（显示多条记录）、DataList（完全使用模板的数据列表控件）、FormView（显示单条记录且完全通过模板实现）等数据绑定控件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第9章aspnet三层架构知识点总结&#34;&gt;第9章ASP.NET三层架构知识点总结
+&lt;/h2&gt;&lt;h3 id=&#34;1-aspnet三层架构概述&#34;&gt;1. ASP.NET三层架构概述
+&lt;/h3&gt;&lt;h4 id=&#34;11架构背景&#34;&gt;1.1架构背景
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Web窗体的二层架构（.aspx文件用于界面显示，.aspx.cs文件用于事件处理）存在耦合度高、扩展性差、不利于团队分工合作的问题，由此引出ASP.NET三层架构。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;12架构组成&#34;&gt;1.2架构组成
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;表示层（Web）：负责与用户交互，展示数据和接收用户输入。&lt;/li&gt;
+&lt;li&gt;业务逻辑层（BLL）：处理业务规则和逻辑，调用数据访问层获取或保存数据。&lt;/li&gt;
+&lt;li&gt;数据访问层（DAL）：与数据库交互，执行数据的查询、插入、更新和删除操作。使用不同数据访问技术时架构成员不同，如使用ADO.NET需增加业务实体类项目Model、数据库访问通用类项目DBUtility等；使用LINQ to SQL技术则只需三层架构基本组成部分。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-搭建aspnet三层架构&#34;&gt;2. 搭建ASP.NET三层架构
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;以MyPetShop为例（数据访问使用LINQ技术），步骤为创建空白解决方案，添加ASP.NET空网站作为表示层项目（MyPetShop.Web），添加类库项目作为业务逻辑层（MyPetShop.BLL）和数据访问层（MyPetShop.DAL），并在业务逻辑层项目中引用数据访问层项目。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-基于aspnet三层架构的用户管理&#34;&gt;3. 基于ASP.NET三层架构的用户管理
+&lt;/h3&gt;&lt;h4 id=&#34;31用户注册&#34;&gt;3.1用户注册
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;流程：表示层获取注册信息（用户名、Email、密码等），业务逻辑层调用用户名检查、用户添加等方法，数据访问层执行数据库中的用户名重名查询、用户记录插入操作。例如，MyPetShop用户注册功能中，需验证必填信息、Email格式、密码一致性，注册成功或失败有相应提示，注册失败时点击链接可跳转到登录页面并传递用户名。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;32用户登录&#34;&gt;3.2用户登录
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;流程：表示层获取登录信息（用户名、密码），业务逻辑层调用用户名和密码检查方法，数据访问层查询数据库中的用户登录信息。如MyPetShop用户登录功能，登录成功或失败有不同界面提示，登录失败时可进行相应操作（如忘记密码、注册新用户）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;33用户登录状态和权限&#34;&gt;3.3用户登录状态和权限
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;若用户权限信息未存于数据库，流程为表示层获取用户名信息，呈现相应登录状态和权限信息，如根据不同用户（如普通用户jack和管理员admin）在表示层呈现不同登录状态和权限。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;34用户密码修改&#34;&gt;3.4用户密码修改
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;流程：表示层获取原密码、新密码、确认新密码等信息，业务逻辑层调用方法先查询原密码，正确则再调用方法修改数据库中的密码。如修改已登录一般用户密码的操作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;35用户密码重置&#34;&gt;3.5用户密码重置
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;流程：表示层获取用户名、Email等信息，业务逻辑层调用方法查询数据库中的用户名和Email，正确则重置密码并发送邮件通知用户。如MyPetShop密码重置功能，用户输入信息验证通过后密码重置并收到邮件，可获取新密码登录。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-小结-2&#34;&gt;4. 小结
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ASP.NET三层架构是企业Web应用开发主流技术，包括表示层、业务逻辑层和数据访问层。用户管理涵盖注册、登录、状态和权限呈现、密码修改和重置等功能，实际开发中还需完善基于角色的用户权限管理等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第10章主题母版和用户控件知识点总结&#34;&gt;第10章主题、母版和用户控件知识点总结
+&lt;/h2&gt;&lt;h3 id=&#34;1-主题&#34;&gt;1. 主题
+&lt;/h3&gt;&lt;h4 id=&#34;11主题概述&#34;&gt;1.1主题概述
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;提供统一外观，包含外观文件、CSS文件、图片文件等，是定义页面和控件外观属性集合，与主题文件夹对应，存储于App_Themes文件夹，应用程序主题可选择不同风格，由外观文件等组成，还可包含其他资源。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;12自定义主题&#34;&gt;1.2自定义主题
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;以创建Red主题为例，SkinID属性可为同种控件定义多种外观（无SkinID为默认，有则为已命名外观，同一主题中不允许重复），还可添加CSS和图片文件到主题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;13使用主题&#34;&gt;1.3使用主题
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;可在单个页面（用@Page指令的Theme或StylesheetTheme属性）、网站（修改Web.config文件）或网站部分页面（将页面放文件夹建Web.config或在根Web.config用&lt;code&gt;&amp;lt;location&amp;gt;&lt;/code&gt;元素指定）应用主题，禁用主题由控件和页面的EnableTheming属性确定，如动态切换主题实例（根据选择设置Page.Theme属性，注意设置位置和禁用主题控件情况）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-母版页&#34;&gt;2. 母版页
+&lt;/h3&gt;&lt;h4 id=&#34;21母版页概述&#34;&gt;2.1母版页概述
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;方便建立统一风格网站，可创建一致布局、处理通用功能、创建控件和代码，由@Master指令识别，包含ContentPlaceHolder占位符控件，扩展名.master，内容页通过MasterPageFile属性指定母版页路径，用Content控件与母版页占位符联系。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;22创建母版页&#34;&gt;2.2创建母版页
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;如创建“上中下”布局母版页MasterPage.master。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;23创建内容页&#34;&gt;2.3创建内容页
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;基于母版页创建，仅含要合并内容（文本、控件等），如创建基于MasterPage.master的ContentPage.aspx，通过@Page指令指定母版页。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-用户控件&#34;&gt;3. 用户控件
+&lt;/h3&gt;&lt;h4 id=&#34;31用户控件概述&#34;&gt;3.1用户控件概述
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;可重复使用自定义控件，类似ASP.NET页面，用于实现未提供功能或统一页面风格，文件扩展名为.ascx，含@Control指令，不能独立运行，必须添加到Web窗体使用，不含&lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;、&lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt;元素（由宿主页面提供）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;32创建用户控件&#34;&gt;3.2创建用户控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;可像设计Web窗体一样设计或转换Web窗体为用户控件，转换时注意更改文件扩展名、指令及相关属性（如将单文件页或代码隐藏页转换的具体操作）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;33使用用户控件&#34;&gt;3.3使用用户控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;从“解决方案资源管理器”拖到页面添加，自动添加@Register指令，如SearchUserControl实例（添加到Web窗体后，页面加载和按钮点击触发用户控件中相应事件，实际工程常结合数据库）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-小结-3&#34;&gt;4. 小结
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;外观文件统一服务器控件外观，主题存于App_Themes文件夹对应主题文件夹，母版页建立统一风格网站，用户控件统一页面局部风格，基于Web部件网站可实现用户个性化设置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第11章网站导航知识点总结&#34;&gt;第11章网站导航知识点总结
+&lt;/h2&gt;&lt;h3 id=&#34;1-网站地图&#34;&gt;1. 网站地图
+&lt;/h3&gt;&lt;h4 id=&#34;11网站地图文件&#34;&gt;1.1网站地图文件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;用于描述网站页面层次结构，是XML文件，&lt;code&gt;&amp;lt;siteMapNode&amp;gt;&lt;/code&gt;元素描述页面标题、URL等信息，其中一个网站地图文件须存于根文件夹下名为Web.sitemap，其他可放其他位置，&lt;code&gt;&amp;lt;siteMapNode&amp;gt;&lt;/code&gt;元素有description（超链接提示）、roles（可访问角色）、securityTrimmingEnabled（是否支持安全特性）、siteMapFile（引用其他地图文件）、title（显示文本）、url（目标页URL）等属性，如创建网站地图实例。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;12嵌套网站地图文件&#34;&gt;1.2嵌套网站地图文件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;可将页面结构分散到多个.sitemap文件再合并到根文件夹下Web.sitemap文件，合并用&lt;code&gt;&amp;lt;siteMapNode&amp;gt;&lt;/code&gt;元素的siteMapFile属性，如创建嵌套网站地图实例（功能同简单网站地图但结构不同）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-sitemappath控件显示导航&#34;&gt;2. SiteMapPath控件显示导航
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;实现面包屑导航（显示当前页面在网站层次结构位置），自动绑定Web.sitemap，无需数据源控件，常用属性有ParentLevelsDisplayed（父节点级别数）、PathDirection（导航路径呈现顺序）、PathSeparator（导航路径分隔符）、PathSeparatorTemplate（导航路径分隔模板），如利用该控件显示导航实例（可将其添加到母版页统一导航界面）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-treeview控件显示导航&#34;&gt;3. TreeView控件显示导航
+&lt;/h3&gt;&lt;h4 id=&#34;31treeview控件&#34;&gt;3.1TreeView控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;以树形结构显示分层数据，可用于网站导航、显示XML等数据，节点分为根、父、子、叶节点，每个节点是TreeNode对象，有CheckedNodes（选中复选框节点集合）、CollapseImageUrl（节点折叠显示图片URL）、EnableClientScript（是否允许客户端处理展开折叠事件）、ExpandDepth（首次显示展开级数）、ExpandImageUrl（节点展开显示图片URL）、Nodes（根节点集合）、NoExpandImageUrl（不可折叠节点图片URL）、PathSeparator（节点路径分隔符）、SelectedNode（当前选中节点）、SelectedValue（当前选中节点值）、ShowCheckBoxes（是否显示复选框）、ShowLines（是否显示连接线）等属性，TreeNode类有ChildNodes（子节点集合）、ImageUrl（节点旁图片URL）、NavigateUrl（单击节点导航URL）、Parent（父节点）等属性，节点数据可在设计时或编程动态添加修改，也可绑定数据源，有CollapseAll（折叠节点）、ExpandAll（展开节点）、Nodes.Add（添加节点）、Nodes.Remove（删除节点）等方法，如运用TreeView控件显示城市结构并操作节点实例。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;32使用treeview控件实现导航&#34;&gt;3.2使用TreeView控件实现导航
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;数据填充方式有两种，一是用数据源控件SiteMapDataSource（设置TreeView控件DataSourceID为其ID），二是用LINQ技术，如利用TreeView控件显示导航实例（用SiteMapDataSource绑定Web.sitemap显示网页结构）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-menu控件显示导航&#34;&gt;4. Menu控件显示导航
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;以菜单形式显示分层数据，需数据源控件支持，Orientation属性确定排列方式（Vertical竖向，Horizontal横向，默认Vertical），如利用Menu控件显示导航菜单实例。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-母版页中使用网站导航&#34;&gt;5. 母版页中使用网站导航
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;步骤为创建导航母版页、添加导航控件、创建内容页并关联母版页，如实现基于母版页的网站导航实例（母版页实现导航，内容页关联并显示提示信息）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;6-小结-1&#34;&gt;6. 小结
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ASP.NET导航系统核心是用XML网站地图文件描述页面结构，SiteMapPath实现面包屑导航且无需数据源，TreeView以树形结构显示需数据源，Menu以菜单形式显示需数据源。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第12章aspnet-ajax知识点总结&#34;&gt;第12章ASP.NET Ajax知识点总结
+&lt;/h2&gt;&lt;h3 id=&#34;1-ajax基础&#34;&gt;1. Ajax基础
+&lt;/h3&gt;&lt;h4 id=&#34;11ajax概述&#34;&gt;1.1Ajax概述
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;允许客户端异步与服务器交换数据，构建交互性Web应用程序，Ajax页面无刷新，依赖XMLHttpRequest对象（IE 5.0以上通过MSXML ActiveX组件使用）、JavaScript代码、DHTML（动态更新表单）和文档对象模型DOM（处理HTML和XML），如对比传统与Ajax Web应用程序差异。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;12aspnet-ajax技术&#34;&gt;1.2ASP.NET Ajax技术
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;专用于ASP.NET页面，实现局部页刷新，自动生成代理类，支持主流浏览器，页面处理多在浏览器，有“仅客户端”（使用ASP.NET Ajax Library）和“客户端与服务器”（同时使用库和服务器控件）解决方案。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-aspnet-ajax服务器控件&#34;&gt;2. ASP.NET Ajax服务器控件
+&lt;/h3&gt;&lt;h4 id=&#34;21scriptmanager控件&#34;&gt;2.1ScriptManager控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;是ASP.NET Ajax核心，管理页面Ajax资源，每个Ajax页面必须添加，EnablePartialRendering属性确定能否局部刷新，可在Scripts属性集合注册自定义JavaScript脚本，母版页使用时在母版页添加（内容页可添加ScriptManagerProxy控件）且只允许一个。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;22updatepanel控件&#34;&gt;2.2UpdatePanel控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;容器控件，内部控件可局部刷新，可放多个，内容放&lt;code&gt;&amp;lt;ContentTemplate&amp;gt;&lt;/code&gt;子元素，通过&lt;code&gt;&amp;lt;Triggers&amp;gt;&lt;/code&gt;元素内&lt;code&gt;&amp;lt;asp:AsyncPostBackTrigger&amp;gt;&lt;/code&gt;元素定义触发器，如内部按钮刷新（默认内部回发控件导致异步回发刷新内容）、外部按钮刷新（避免不必要数据回送，将触发控件放外部并设触发器）、多个UpdatePanel控件使用（UpdateMode属性控制刷新条件，注意属性值设置限制）实例。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;23timer控件&#34;&gt;2.3Timer控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;按间隔执行同步或异步回发，用于定期刷新UpdatePanel内容，Interval属性定义间隔，Tick事件触发，Enabled属性启用禁用，可多个或关联多个UpdatePanel，如定时刷新汇率及时间实例（根据用户选择设置Timer属性控制刷新频率）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;24updateprogress控件&#34;&gt;2.4UpdateProgress控件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;设计直观UI显示任务完成情况，可放多个并通过AssociatedUpdatePanelID属性关联单个UpdatePanel，如单击按钮显示局部刷新进度条实例（模拟服务器延迟操作）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-ajaxcontroltoolkit程序包&#34;&gt;3. AjaxControlToolkit程序包
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;基于ASP.NET Ajax框架的开源项目，用NuGet安装，提供多种扩展Ajax控件工具集，如Accordion（可折叠面板）、AjaxFileUpload（文件上传）、AlwaysVisibleControlExtender（悬浮控件）等，如运用CalendarExtender（实现日期输入，设置TargetControlID关联文本框、Format设置日期格式）和PasswordStrength（检测密码强度，可设置提示方式、强度信息、进度条样式等属性）控件实例。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-小结-4&#34;&gt;4. 小结
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ScriptManager是ASP.NET Ajax核心，UpdatePanel定义局部刷新区域，UpdateProgress显示局部刷新状态，Timer定时回发，AjaxControlToolkit扩展服务器控件功能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第13章web服务和wcf服务知识点总结&#34;&gt;第13章Web服务和WCF服务知识点总结
+&lt;/h2&gt;&lt;h3 id=&#34;1-web服务&#34;&gt;1. Web服务
+&lt;/h3&gt;&lt;h4 id=&#34;11web服务概述&#34;&gt;1.1Web服务概述
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;可使Web应用程序共享和使用其他应用程序生成的数据（返回数据而非页面），实现软件重用。网络通信基于HTTP等协议，消息处理用SOAP，需WSDL和UDDI支持。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;12建立aspnet-web服务&#34;&gt;1.2建立ASP.NET Web服务
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;实质是在支持SOAP通信类中创建方法，创建.asmx服务文件声明Web服务，在App_Code文件夹建类文件定义方法，如创建含HelloWorld方法的Web服务（需注意命名空间、规范声明及方法前加[WebMethod]）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;13调用aspnet-web服务&#34;&gt;1.3调用ASP.NET Web服务
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;可用于多种应用程序，若被Microsoft Ajax调用需声明[System.Web.Script.Services.ScriptService]，使用时以“服务引用”添加到网站，创建实例调用，如测试Web服务实例（点击按钮调用服务方法并显示结果）、运用AutoCompleteExtender控件调用Web服务实现文本框自动补全功能实例（服务被Ajax控件调用需声明相关属性）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-wcf服务&#34;&gt;2. WCF服务
+&lt;/h3&gt;&lt;h4 id=&#34;21wcf服务概述&#34;&gt;2.1WCF服务概述
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;为服务提供运行时环境，是面向服务的应用程序新框架，用于开发分布式系统，支持多种通信协议，基于.NET Framework 3.0构建（.NET Framework 4.5中相关特性），包含于System.ServiceModel.dll，命名空间为System.ServiceModel。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;22建立wcf服务&#34;&gt;2.2建立WCF服务
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;需建立服务接口文件和逻辑处理文件，有WCF服务网站模板和WCF服务模板，如建立整数加减运算WCF服务实例（涉及服务契约定义，包括[ServiceContract]用于类或结构可远程调用，[OperationContract]用于方法可远程调用，还有数据、异常、消息契约）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;23调用wcf服务&#34;&gt;2.3调用WCF服务
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;通过添加服务引用在其他应用程序中调用，如调用整数加减运算WCF服务实例（建立服务对象实例，点击按钮调用相应方法计算并显示结果，使用后需关闭，可再次打开）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-小结-1&#34;&gt;3. 小结
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Web服务实现数据和软件重用，方便构建分布式系统，VSC 2017模板便于建立和调用ASP.NET Web服务；WCF服务是面向服务框架，用于开发分布式系统，建立时需多种文件，有特定模板。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第14章文件处理知识点总结&#34;&gt;第14章文件处理知识点总结
+&lt;/h2&gt;&lt;h3 id=&#34;1-驱动器文件夹和文件操作&#34;&gt;1. 驱动器、文件夹和文件操作
+&lt;/h3&gt;&lt;h4 id=&#34;11获取驱动器信息&#34;&gt;1.1获取驱动器信息
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;使用DriveInfo类获取Web服务器驱动器信息，需导入System.IO命名空间，其属性（如AvailableFreeSpace、DriveFormat等）和方法（如GetDrives）可获取驱动器各种属性和所有逻辑驱动器名称，如显示所有驱动器信息实例（遍历驱动器集合添加到TreeView控件）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;12文件夹操作&#34;&gt;1.2文件夹操作
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;用Directory和DirectoryInfo类操作文件夹，Directory类方法静态（可直接调用且安全检查），DirectoryInfo类方法实例化后使用，Path类提供路径操作方法（如合并、获取文件名等）。Directory类方法包括创建、删除、判断存在、获取子文件夹和文件等；DirectoryInfo类类似且有移动、获取原始路径等方法；Path类有更改扩展、合并路径等方法，如计算文件夹大小实例（递归计算文件和子文件夹大小并构建目录树显示）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;13文件操作&#34;&gt;1.3文件操作
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;File和FileInfo类提供文件操作方法，File类方法静态，FileInfo类方法实例化后使用。File类方法涵盖创建、复制、删除、移动、打开、读写、获取时间等操作；FileInfo类类似且有追加文本、获取字符串路径等方法，如文件创建、复制、删除和移动操作实例（根据输入路径操作文件并提示信息，可获取文件创建时间和大小）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-读写文件&#34;&gt;2. 读写文件
+&lt;/h3&gt;&lt;h4 id=&#34;21stream类&#34;&gt;2.1Stream类
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;读写数据用数据流形式，Stream类抽象，FileStream类用于文件操作，有CanRead、CanWrite等属性（判断数据流读写支持和长度等）和BeginRead、BeginWrite等方法（异步读写、关闭、刷新、读写字节等操作），异步写文件需用Lock和UnLock解决冲突，使用后用Close关闭或用using确保关闭，如利用FileStream类读写文件实例（判断文件存在与否进行读写操作，注意编码方式避免中文乱码）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;22reader和writer类&#34;&gt;2.2Reader和Writer类
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;完成数据流字节读写，包括BinaryReader、StreamReader等多种类型，TextReader和TextWriter为抽象类用于读写文本内容（有Close、Peek、Read等方法），如利用StreamReader和StreamWriter读写文本文件实例（根据按钮点击读写文件，可设置写入模式）、利用BinaryReader和BinaryWriter读写二进制数据文件实例（注意写入和读取数据类型对应方法）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-文件上传&#34;&gt;3. 文件上传
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;FileUpload控件实现文件上传，PostedFile属性获取上传文件HttpPostedFile对象（可获取文件长度、类型、名称等属性），SaveAs方法保存文件到Web服务器，如利用FileUpload实现文件上传实例（选择文件上传到指定文件夹，限制文件大小和扩展名）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-小结-5&#34;&gt;4. 小结
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;System.IO命名空间下DriveInfo等类实现Web服务器文件夹和文件操作，基于Stream类和Reader/Writer类实现读写通用模型，FileUpload控件用于上传文件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第15章mypetshop综合实例知识点总结&#34;&gt;第15章MyPetShop综合实例知识点总结
+&lt;/h2&gt;&lt;h3 id=&#34;1-系统总体设计和开发思路&#34;&gt;1. 系统总体设计和开发思路
+&lt;/h3&gt;&lt;h4 id=&#34;11系统功能模块设计&#34;&gt;1.1系统功能模块设计
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;包含前台商品浏览、用户注册登录、购物车、订单结算模块和后台管理模块，各模块有不同功能（如前台商品浏览展示商品，后台管理模块进行商品分类、供应商、商品、订单管理等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;12用户控件设计&#34;&gt;1.2用户控件设计
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;包括AutoShow（热销商品自动定时刷新）、Category（商品分类显示）、NewProduct（最新商品显示）、PetTree（商品分类及导航）、SiteMap（网站导航）、UserStatus（显示用户登录状态）、Weather（天气预报）等用户控件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;13系统数据库总体设计&#34;&gt;1.3系统数据库总体设计
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;用SQL Server 2016 Express LocalDB开发，MyPetShop.mdf数据库含七个表（CartItem、Category、Customer、Order、OrderItem、Product、Supplier）存储相关信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;14webconfig配置文件&#34;&gt;1.4Web.config配置文件
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;配置文件用于项目相关设置（具体内容未详细展开）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;15基于vsc-2017开发总体思路&#34;&gt;1.5基于VSC 2017开发总体思路
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;使用LINQ技术和ASP.NET三层架构，包括新建解决方案及各层项目、添加引用、复制相关文件夹、安装AjaxControlToolkit、建立数据库和各类文件、进行页面设计、生成网站并测试等一系列步骤。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-mypetshopmdf数据库设计&#34;&gt;2. MyPetShop.mdf数据库设计
+&lt;/h3&gt;&lt;h4 id=&#34;21数据表设计&#34;&gt;2.1数据表设计
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;详细设计购物车详细信息、商品分类信息、用户信息、订单信息、订单详细信息、商品信息、供应商信息等表结构，各表包含不同字段存储相应信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;22数据表联系设计&#34;&gt;2.2数据表联系设计
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;各数据表通过特定字段建立联系，如Customer表与Order表通过CustomerId关联，共同构成完整数据关系。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-用户控件设计&#34;&gt;3. 用户控件设计
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;具体介绍各用户控件功能及界面呈现效果，如“热销商品自动定时刷新”用户控件定时切换展示商品，“商品分类列表”用户控件展示分类及商品数量等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-前台显示页面设计&#34;&gt;4. 前台显示页面设计
+&lt;/h3&gt;&lt;h4 id=&#34;41母版页&#34;&gt;4.1母版页
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;应用ASP.NET Ajax技术和Bootstrap框架样式表，添加用户控件和Web部件，实现商品搜索功能，统一网站布局和风格。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;42首页&#34;&gt;4.2首页
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;使用ASP.NET Ajax技术，添加多个自定义用户控件（如热销、最新商品列表等），展示各类信息，提供多种功能入口（注册、登录、购物车等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;43商品详细信息页面&#34;&gt;4.3商品详细信息页面
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;展示商品详细信息（编号、分类、名称、价格、描述、库存等），方便用户了解商品详情。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;44商品搜索页面&#34;&gt;4.4商品搜索页面
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;用户可输入关键词搜索商品，展示搜索结果（商品名称、价格、分类等），方便用户查找所需商品。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-用户注册和登录模块&#34;&gt;5. 用户注册和登录模块
+&lt;/h3&gt;&lt;h4 id=&#34;51注册新用户&#34;&gt;5.1注册新用户
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;用户输入用户名、Email、密码等信息注册，系统检查信息合法性（如必填、格式、密码一致性等），注册成功或失败有相应提示，成功后可登录或进行其他操作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;52用户登录&#34;&gt;5.2用户登录
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;用户输入用户名和密码登录，验证通过进入系统，失败显示错误提示，可进行注册、找回密码等操作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;53修改用户密码&#34;&gt;5.3修改用户密码
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;已登录用户输入原密码、新密码和确认新密码修改密码，原密码正确且新密码符合要求则修改成功，否则提示错误。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;54找回用户密码&#34;&gt;5.4找回用户密码
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;用户输入用户名和Email，系统验证后将密码重置并发送到邮箱，用户可通过邮箱获取新密码登录。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;55退出系统&#34;&gt;5.5退出系统
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;由“用户状态”用户控件实现，登录用户点击“退出登录”链接注销用户，系统清除相关登录状态信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;6-购物车模块&#34;&gt;6. 购物车模块
+&lt;/h3&gt;&lt;h4 id=&#34;61购物车组件设计与实现&#34;&gt;6.1购物车组件设计与实现
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;采用数据库存储购物车内容，按用户编号区分，用户登录后可操作购物车，实现购物车功能的数据存储和管理基础。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;62购物车页面设计&#34;&gt;6.2购物车页面设计
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;页面展示购物车商品信息（名称、价格、数量等），提供总价计算、删除商品、清空购物车、结算和重新计算等功能操作入口。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;63购物车功能设计与实现&#34;&gt;6.3购物车功能设计与实现
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;包括添加商品（用户在商品页面点击按钮将商品加入购物车，可修改数量）、删除商品（选中复选框点击按钮删除）、修改数量（更改后点击重新计算更新总价）、清空购物车（点击按钮删除所有商品记录）、结算（点击按钮重定向到结算页面，实际需关联电子支付等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;7-订单处理&#34;&gt;7. 订单处理
+&lt;/h3&gt;&lt;h4 id=&#34;71创建订单&#34;&gt;7.1创建订单
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;登录用户在购物车点击结算进入创建订单页面，填写发货和发票寄送地址、联系电话等信息后提交结算，订单信息存储到数据库。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;72查看订单&#34;&gt;7.2查看订单
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;登录用户可查看自己订单详细信息（订单号、用户号、用户名、订单时间、地址、状态等），方便用户跟踪订单状态。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;8-后台管理模块&#34;&gt;8. 后台管理模块
+&lt;/h3&gt;&lt;h4 id=&#34;81商品分类管理&#34;&gt;8.1商品分类管理
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;管理员登录后可对商品分类进行编辑（修改分类名称、描述等）、删除和新建操作，页面展示分类名称、描述及操作按钮。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;82供应商信息管理&#34;&gt;8.2供应商信息管理
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;管理员可编辑（修改供应商名称、地址、联系方式等）、删除和新建供应商信息，页面展示供应商详细信息及操作按钮。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;83商品信息管理&#34;&gt;8.3商品信息管理
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;管理员可添加（输入商品名称、分类、价格、成本、库存、描述、图片等信息）、修改（修改商品各项信息）和删除商品（选中复选框点击按钮删除），页面展示商品列表及操作按钮。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;84订单管理&#34;&gt;8.4订单管理
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;管理员查看订单详细信息（订单ID、用户、审核状态等），可审核订单（点击按钮更改审核状态），页面展示订单相关信息及操作按钮。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;9-小结&#34;&gt;9. 小结
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;MyPetShop综合实例开发涵盖系统总体设计、数据库、用户控件、前台后台页面及各功能模块设计，基于VSC 2017和ASP.NET三层架构，是学习Web应用程序开发的良好模板，有助于理解设计思想和掌握开发方法。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Ngrok内网穿透连接本地Mysql数据库</title>
         <link>https://Nanmur.github.io/p/ngrok/</link>
         <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
