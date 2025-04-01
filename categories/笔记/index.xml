@@ -7,13 +7,13 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Nanmur</copyright>
-        <lastBuildDate>Wed, 19 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://Nanmur.github.io/categories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Acwing算法基础班笔记（更新中）</title>
-        <link>https://Nanmur.github.io/p/test-chinese/</link>
-        <pubDate>Wed, 19 Mar 2025 00:00:00 +0000</pubDate>
+        <lastBuildDate>Tue, 01 Apr 2025 15:37:46 +0800</lastBuildDate><atom:link href="https://Nanmur.github.io/categories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Acwing算法基础班</title>
+        <link>https://Nanmur.github.io/p/acwing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E7%8F%AD/</link>
+        <pubDate>Tue, 01 Apr 2025 15:37:46 +0800</pubDate>
         
-        <guid>https://Nanmur.github.io/p/test-chinese/</guid>
-        <description>&lt;img src="https://Nanmur.github.io/p/test-chinese/Acwinglogo.png" alt="Featured image of post Acwing算法基础班笔记（更新中）" /&gt;&lt;h2 id=&#34;基础算法&#34;&gt;基础算法
+        <guid>https://Nanmur.github.io/p/acwing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E7%8F%AD/</guid>
+        <description>&lt;img src="https://Nanmur.github.io/p/acwing%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E7%8F%AD/logo.png" alt="Featured image of post Acwing算法基础班" /&gt;&lt;h2 id=&#34;基础算法&#34;&gt;基础算法
 &lt;/h2&gt;&lt;p&gt;练习题：Acwing T785-T803&lt;/p&gt;
 &lt;h3 id=&#34;排序&#34;&gt;排序
 &lt;/h3&gt;&lt;h4 id=&#34;快速排序&#34;&gt;快速排序
@@ -2721,7 +2721,139 @@ eg： lowbit(1010) = 10;  lowbit(101000) = 1000;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;h2 id=&#34;动态规划&#34;&gt;动态规划
+&lt;/h2&gt;&lt;p&gt;从以下两个角度去思考动态规划问题（以0-1背包为例）：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;状态表示——分为用什么集合来表示（所有只考虑前i个物品且总体积不大于j的选法的集合）、表示的是一种什么属性（所有选法中的最大值）。&lt;/li&gt;
+&lt;li&gt;状态计算（转移）——如何将集合划分（f(i,j)划分为一半含i的和另一半不含i的）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;背包问题总结&#34;&gt;背包问题总结
+&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;​&lt;strong&gt;问题类型&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;​&lt;strong&gt;物品选择规则&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;​&lt;strong&gt;状态转移方程（一维）​&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;​&lt;strong&gt;遍历顺序&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;​&lt;strong&gt;时间复杂度&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;​&lt;strong&gt;空间复杂度&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;​&lt;strong&gt;核心优化策略&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;​&lt;strong&gt;应用场景&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;​&lt;strong&gt;0-1背包&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;每个物品仅选一次&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;dp[j] = max(dp[j], dp[j-w]+v)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;逆序容量遍历&lt;/td&gt;
+&lt;td&gt;$O(n \times C)$&lt;/td&gt;
+&lt;td&gt;$O(C)$&lt;/td&gt;
+&lt;td&gt;一维数组逆序更新&lt;/td&gt;
+&lt;td&gt;单次投资、资源分配&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;​&lt;strong&gt;完全背包&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;物品无限次选择&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;dp[j] = max(dp[j], dp[j-w]+v)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;正序容量遍历&lt;/td&gt;
+&lt;td&gt;$O(n \times C)$&lt;/td&gt;
+&lt;td&gt;$O(C)$&lt;/td&gt;
+&lt;td&gt;一维数组正序更新&lt;/td&gt;
+&lt;td&gt;无限供应分配、零钱兑换&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;​&lt;strong&gt;多重背包&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;物品最多选$s_i$次&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;dp[j] = max(dp[j-k*w]+k*v)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;逆序容量+拆分优化&lt;/td&gt;
+&lt;td&gt;$O(n \times C \log s)$&lt;/td&gt;
+&lt;td&gt;$O(C)$&lt;/td&gt;
+&lt;td&gt;二进制拆分、单调队列优化&lt;/td&gt;
+&lt;td&gt;库存管理、原材料采购&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;​&lt;strong&gt;分组背包&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;每组最多选一个物品&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;dp[j] = max(dp[j], dp[j-w_k]+v_k)&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;逆序容量+组内遍历&lt;/td&gt;
+&lt;td&gt;$O(n \times C \times s_{\text{max}})$&lt;/td&gt;
+&lt;td&gt;$O(C)$&lt;/td&gt;
+&lt;td&gt;组间独立处理、树形DP扩展&lt;/td&gt;
+&lt;td&gt;物流装箱、分组任务调度&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;核心要点总结&#34;&gt;​&lt;strong&gt;核心要点总结&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;​&lt;strong&gt;状态转移逻辑差异&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;​&lt;strong&gt;0-1背包&lt;/strong&gt;：每个物品仅考虑一次，通过逆序容量避免重复计算。&lt;/li&gt;
+&lt;li&gt;​&lt;strong&gt;完全背包&lt;/strong&gt;：允许重复选择，正序容量更新利用当前物品的已选状态。&lt;/li&gt;
+&lt;li&gt;​&lt;strong&gt;多重背包&lt;/strong&gt;：通过二进制拆分将有限次选择转化为多个0-1背包问题（如将13次拆分为1+2+4+6），降低时间复杂度。&lt;/li&gt;
+&lt;li&gt;​&lt;strong&gt;分组背包&lt;/strong&gt;：每组独立处理，需遍历组内所有物品选择最优解。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​&lt;strong&gt;遍历顺序的关键&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;​&lt;strong&gt;逆序（0-1/多重/分组背包）​&lt;/strong&gt;：保证每个状态仅依赖上一轮结果，避免覆盖。&lt;/li&gt;
+&lt;li&gt;​&lt;strong&gt;正序（完全背包）​&lt;/strong&gt;：允许同一物品多次被选中，直接利用当前轮次的状态。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​&lt;strong&gt;优化策略对比&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;​&lt;strong&gt;空间压缩&lt;/strong&gt;：所有背包问题均可通过一维数组将空间复杂度降至$O(C)$。&lt;/li&gt;
+&lt;li&gt;​&lt;strong&gt;二进制优化（多重背包）​&lt;/strong&gt;：将$s_i$次选择转化为$O(\log s_i)$个虚拟物品，时间复杂度优化显著。&lt;/li&gt;
+&lt;li&gt;​&lt;strong&gt;单调队列优化（多重背包）​&lt;/strong&gt;：利用滑动窗口减少冗余计算，适用于大规模数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​&lt;strong&gt;扩展与变种&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;​&lt;strong&gt;混合背包&lt;/strong&gt;：结合0-1、完全、多重背包，需分类处理不同物品类型。&lt;/li&gt;
+&lt;li&gt;​&lt;strong&gt;依赖背包&lt;/strong&gt;：如主件与附件关系，需先选主件再选附件，状态定义增加约束维度。&lt;/li&gt;
+&lt;li&gt;​&lt;strong&gt;求方案数/最小数量&lt;/strong&gt;：修改状态转移为累加或最小值操作（如&lt;code&gt;dp[j] += dp[j-w]&lt;/code&gt;）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​&lt;strong&gt;典型应用场景&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;​&lt;strong&gt;0-1背包&lt;/strong&gt;：单次投资决策（股票买卖）、考试题目选择（每道题仅答一次）。&lt;/li&gt;
+&lt;li&gt;​&lt;strong&gt;完全背包&lt;/strong&gt;：零钱兑换（硬币无限）、资源无限分配（生产计划）。&lt;/li&gt;
+&lt;li&gt;​&lt;strong&gt;多重背包&lt;/strong&gt;：原材料采购（有限库存）、设备批量采购。&lt;/li&gt;
+&lt;li&gt;​&lt;strong&gt;分组背包&lt;/strong&gt;：多类别互斥选择（如物流装箱不同货物类型）、树形结构子树选择。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;代码模板对比&#34;&gt;​&lt;strong&gt;代码模板对比&lt;/strong&gt;
+&lt;/h4&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;问题类型&lt;/th&gt;
+&lt;th&gt;核心代码片段（一维数组实现）&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;​&lt;strong&gt;0-1背包&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;for (int j = C; j &amp;gt;= w[i]; j--) dp[j] = max(dp[j], dp[j - w[i]] + v[i]);&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;​&lt;strong&gt;完全背包&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;for (int j = w[i]; j &amp;lt;= C; j++) dp[j] = max(dp[j], dp[j - w[i]] + v[i]);&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;​&lt;strong&gt;多重背包&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;二进制拆分后按0-1背包处理：&lt;br&gt;&lt;code&gt;for (int k = 1; k &amp;lt;= s[i]; k *= 2) { ... }&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;​&lt;strong&gt;分组背包&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;for (每组物品) { for (int j = C; j &amp;gt;= 0; j--) for (物品k in 组) dp[j] = max(...); }&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;常见误区与注意事项&#34;&gt;​&lt;strong&gt;常见误区与注意事项&lt;/strong&gt;
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;​&lt;strong&gt;完全背包与0-1背包的遍历顺序混淆&lt;/strong&gt;：正序与逆序的差异直接影响结果正确性。&lt;/li&gt;
+&lt;li&gt;​&lt;strong&gt;多重背包未优化导致超时&lt;/strong&gt;：直接三重循环（物品×容量×数量）时间复杂度为$O(n \times C \times s)$，需优先采用二进制优化。&lt;/li&gt;
+&lt;li&gt;​&lt;strong&gt;分组背包漏选最优解&lt;/strong&gt;：需遍历组内所有物品，而非仅选择组内单位价值最高的物品。&lt;/li&gt;
+&lt;li&gt;​&lt;strong&gt;初始化的边界条件&lt;/strong&gt;：如0-1背包的&lt;code&gt;dp[0] = 0&lt;/code&gt;，完全背包的&lt;code&gt;dp[0] = 1&lt;/code&gt;（求方案数时）。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
         </item>
         <item>
         <title>Web ASP网页程序设计笔记</title>
